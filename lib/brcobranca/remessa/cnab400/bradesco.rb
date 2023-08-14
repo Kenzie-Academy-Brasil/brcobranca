@@ -93,7 +93,7 @@ module Brcobranca
           detalhe << pagamento.nosso_numero.to_s.rjust(11, '0')       # identificacao do titulo (nosso numero)      9[11]       071 a 081
           detalhe << digito_nosso_numero(pagamento.nosso_numero).to_s # digito de conferencia do nosso numero (dv)  X[01]       082 a 082
           detalhe << ''.rjust(10, '0')                                # desconto por dia                            9[10]       083 a 092
-          detalhe << '2'                                              # condicao emissao boleto (2 = cliente)       9[01]       093 a 093
+          detalhe << '1'                                              # condicao emissao boleto (2 = cliente)       9[01]       093 a 093
           detalhe << 'N'                                              # emite boleto para debito                    X[01]       094 a 094
           detalhe << ''.rjust(10, ' ')                                # operacao no banco (brancos)                 X[10]       095 a 104
           detalhe << ' '                                              # indicador rateio                            X[01]       105 a 105
